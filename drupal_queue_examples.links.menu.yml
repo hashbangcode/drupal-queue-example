@@ -1,0 +1,6 @@
+drupal_queue_examples:
+  title: 'Drupal Queue Examples'
+  parent: system.admin
+  description: 'Examples of using the queue API in different ways.'
+  route_name: drupal_queue_examples
+  weight: 1

@@ -1,0 +1,16 @@
+services:
+  logger.channel.queue_processor_example:
+    parent: logger.channel_base
+    arguments: ['queue_processor_example']
+
+  queue_processor_example.queue_runner:
+    class: Drupal\queue_processor_example\QueueProcessor
+    tags:
+      - { name: drush.command }
+    arguments:
+      [
+        "@queue",
+        "@plugin.manager.queue_worker",
+        "@datetime.time",
+        "@logger.channel.queue_processor_example",
+      ]

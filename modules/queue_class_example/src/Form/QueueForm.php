@@ -1,15 +1,14 @@
 <?php
 
-namespace Drupal\drupal_queue_example\Form;
+declare(strict_types=1);
 
-use Drupal\Core\Queue\QueueInterface;
+namespace Drupal\queue_class_example\Form;
+
+use Drupal\Core\Url;
+use Drupal\queue_class_example\Queue\QueueData;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Batch\BatchBuilder;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Queue\QueueFactory;
-use Drupal\Core\Queue\QueueFactoryInterface;
-use Drupal\Core\Url;
 
 /**
  * Form that adds a number of items to a queue.
@@ -27,7 +26,7 @@ class QueueForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'queue_form_example';
+    return 'queue_class_example_form';
   }
 
   /**
@@ -48,7 +47,7 @@ class QueueForm extends FormBase {
     ];
 
     /** @var \Drupal\Core\Queue\QueueInterface $queue */
-    $queue = $this->queueFactory->get('queue_example');
+    $queue = $this->queueFactory->get('queue_class_example');
     $form['current_number'] = [
       '#markup' => $this->t('<p>There are currently @items items in the queue.</p>', ['@items' => $queue->numberOfItems()]),
     ];
@@ -61,6 +60,12 @@ class QueueForm extends FormBase {
       ],
     ];
 
+    $form['run_cron'] = [
+      '#type' => 'link',
+      '#title' => $this->t('Go to the cron form to run it and process the queue.'),
+      '#url' => Url::fromRoute('system.cron_settings'),
+    ];
+
     return $form;
   }
 
@@ -69,11 +74,10 @@ class QueueForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     /** @var \Drupal\Core\Queue\QueueInterface $queue */
-    $queue = $this->queueFactory->get('queue_example');
+    $queue = $this->queueFactory->get('queue_class_example');
 
     for ($i = 0; $i < 100; $i++) {
-      $item = new \stdClass();
-      $item->id = $i;
+      $item = new QueueData($i);
       $queue->createItem($item);
     }
   }

@@ -1,0 +1,6 @@
+queue_class_example:
+  title: 'Queue Class Example'
+  parent: drupal_queue_examples
+  description: 'An example of a queue that uses a class to store queue data.'
+  route_name: queue_class_example
+  weight: 2

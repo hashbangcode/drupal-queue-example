@@ -1,0 +1,7 @@
+queue_processor_example:
+  path: '/drupal-queue-examples/queue-processor-example'
+  defaults:
+    _form: '\Drupal\queue_processor_example\Form\QueueForm'
+    _title: 'Queue Processor Example'
+  requirements:
+    _permission: 'access content'

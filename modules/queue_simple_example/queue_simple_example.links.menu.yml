@@ -1,0 +1,6 @@
+queue_simple_example:
+  title: 'Queue Simple Example'
+  parent: drupal_queue_examples
+  description: 'An example of a simple queue.'
+  route_name: queue_simple_example
+  weight: 1

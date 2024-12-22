@@ -1,0 +1,6 @@
+queue_processor_example:
+  title: 'Queue Processor Example'
+  parent: drupal_queue_examples
+  description: 'An example of a custom queue processor.'
+  route_name: queue_processor_example
+  weight: 3

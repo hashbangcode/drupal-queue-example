@@ -1,0 +1,5 @@
+name: 'Queue Processor Example'
+type: module
+description: 'An example of a queue processor.'
+package: Custom
+core_version_requirement: ^10 || ^11

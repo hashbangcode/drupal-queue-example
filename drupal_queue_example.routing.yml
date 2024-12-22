@@ -1,7 +1,0 @@
-drupal_queue_example:
-  path: '/drupal-queue-examples'
-  defaults:
-    _form: '\Drupal\drupal_queue_example\Form\QueueForm'
-    _title: 'Drupal Queue Example'
-  requirements:
-    _permission: 'access content'

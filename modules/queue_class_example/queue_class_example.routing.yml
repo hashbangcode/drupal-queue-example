@@ -1,0 +1,7 @@
+queue_class_example:
+  path: '/drupal-queue-examples/queue-class-example'
+  defaults:
+    _form: '\Drupal\queue_class_example\Form\QueueForm'
+    _title: 'Simple Class Example'
+  requirements:
+    _permission: 'access content'

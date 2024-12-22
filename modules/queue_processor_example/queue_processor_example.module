@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * The queue processor example module file.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_queue_info_alter().
+ */
+function queue_processor_example_queue_info_alter(&$queues) {
+  // Turn off the cron processing for the queue_processor_example queue.
+  unset($queues['queue_processor_example']['cron']);
+}
