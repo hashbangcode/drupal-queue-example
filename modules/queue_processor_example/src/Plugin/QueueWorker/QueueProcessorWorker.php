@@ -42,6 +42,7 @@ class QueueProcessorWorker extends QueueWorkerBase implements ContainerFactoryPl
    * {@inheritDoc}
    */
   public function processItem($data) {
+    // Process the queue item here, and then create a log message.
     $this->logger->info($this->t('Processed processor queue item @id', ['@id' => $data->id]));
   }
 
