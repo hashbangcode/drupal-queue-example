@@ -3,3 +3,5 @@ type: module
 description: 'An example of a queue processor.'
 package: Custom
 core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal_queue_examples:drupal_queue_examples
