@@ -44,7 +44,20 @@ Form path: `/drupal-queue-examples/queue-processor-example`
 
 The hook_queue_info_alter() is used to turn off cron running for the queue.
 
+## Queue Drush Example
+
+As example of adding items to a queue inside a Drush command.
+
+To add items to the `queue_drush_example` queue use the populate command.
+
+`drush queue_drush_example:populate`
+
+You can process the queue using the `drush cron` command.
+
+You can also use the report command to see how many items are in the queue.
+
+`drush queue_drush_example:report`
+
 # To Do
 
-- Add example of using queues with Drush.
 - Different types of queue, including Memory and Reliable queue.
