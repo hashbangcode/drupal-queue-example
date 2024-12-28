@@ -73,6 +73,8 @@ Form path: `/drupal-queue-examples/queue-memory-example`
 ## Queue Custom Example
 
 This is an implementation of a custom queue, along with a custom queue factory.
+The queue created extends the DatabaseQueue, which is a form of reliable
+queue.
 
 Form path: `/drupal-queue-examples/queue-custom-example`
 
@@ -99,7 +101,3 @@ You can also populate the queue with data using the populate command.
 `drush queue_custom_example:populate`
 
 This queue cannot be processed via the cron command.
-
-# To Do
-
-- Create a reliable queue.
