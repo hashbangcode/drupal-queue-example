@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * The queue memory example module file.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_queue_info_alter().
+ */
+function queue_memory_example_queue_info_alter(&$queues) {
+  // Turn off the cron processing for the queue_memory_example queue.
+  unset($queues['queue_memory_example']['cron']);
+}

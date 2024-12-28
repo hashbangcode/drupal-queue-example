@@ -1,0 +1,15 @@
+services:
+  logger.channel.queue_memory_example:
+    parent: logger.channel_base
+    arguments: ['queue_memory_example']
+
+  queue_memory_example.queue_runner:
+    class: Drupal\queue_memory_example\MemoryQueueProcessor
+    tags:
+      - { name: drush.command }
+    arguments:
+      [
+        "@plugin.manager.queue_worker",
+        "@datetime.time",
+        "@logger.channel.queue_memory_example",
+      ]

@@ -1,0 +1,23 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  logger.channel.queue_custom_example:
+    parent: logger.channel_base
+    arguments: ['queue_custom_example']
+
+  queue_custom_example.database:
+    class: Drupal\queue_custom_example\CustomQueueDatabaseFactory
+    parent: queue.database
+
+  queue_custom_example.queue_runner:
+    class: Drupal\queue_custom_example\CustomQueueProcessor
+    tags:
+      - { name: drush.command }
+    arguments:
+      [
+        "@queue_custom_example.database",
+        "@plugin.manager.queue_worker",
+        "@datetime.time",
+        "@logger.channel.queue_processor_example",
+      ]

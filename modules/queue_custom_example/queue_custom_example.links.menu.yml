@@ -1,0 +1,6 @@
+queue_custom_example:
+  title: 'Queue Custom Example'
+  parent: drupal_queue_examples
+  description: 'An example of a custom queue.'
+  route_name: queue_custom_example
+  weight: 5

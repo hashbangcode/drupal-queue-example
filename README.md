@@ -58,6 +58,48 @@ You can also use the report command to see how many items are in the queue.
 
 `drush queue_drush_example:report`
 
+## Queue Memory Example
+
+An example of using the memory queue that is built into Drupal. This queue is a
+good way to understand how the queue system works without using a database. The
+main difference is that everything must be handled in a single page load. As
+the cron handler is not used for this queue a processor is used to process
+the items in the queue directly.
+
+This queue is used by the batch API when using a progressive batch run.
+
+Form path: `/drupal-queue-examples/queue-memory-example`
+
+## Queue Custom Example
+
+This is an implementation of a custom queue, along with a custom queue factory.
+
+Form path: `/drupal-queue-examples/queue-custom-example`
+
+The form itself is self contained and will use the custom queue factory to
+setup the queue. The custom queue works in the same way as the default database
+queue, but will store the data in a different table (called queue_custom).
+
+A couple of Drush commands exist in order to show the use of the queue settings
+when using custom queues. Set the following in your Drupal settings.php before
+trying to use these commands.
+
+```
+$settings['queue_service_queue_custom_example'] =
+  'queue_custom_example.database';
+```
+
+You can then use the following command to see how many items exist in the
+`queue_custom_example` queue.
+
+`drush queue_custom_example:report`
+
+You can also populate the queue with data using the populate command.
+
+`drush queue_custom_example:populate`
+
+This queue cannot be processed via the cron command.
+
 # To Do
 
-- Different types of queue, including Memory and Reliable queue.
+- Create a reliable queue.

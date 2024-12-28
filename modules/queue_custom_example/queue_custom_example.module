@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * The queue custom example module file.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_queue_info_alter().
+ */
+function queue_custom_example_queue_info_alter(&$queues) {
+  // Turn off the cron processing for the queue_custom_example queue.
+  unset($queues['queue_custom_example']['cron']);
+}

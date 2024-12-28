@@ -1,0 +1,7 @@
+queue_memory_example:
+  path: '/drupal-queue-examples/queue-memory-example'
+  defaults:
+    _form: '\Drupal\queue_memory_example\Form\QueueForm'
+    _title: 'Queue Memory Example'
+  requirements:
+    _permission: 'access content'

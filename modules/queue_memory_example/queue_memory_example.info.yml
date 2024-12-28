@@ -1,0 +1,7 @@
+name: 'Queue Memory Example'
+type: module
+description: 'An example of a memory queue implementation.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal_queue_examples:drupal_queue_examples

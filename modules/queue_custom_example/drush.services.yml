@@ -1,0 +1,6 @@
+services:
+  queue_custom_example.commands:
+    class: \Drupal\queue_custom_example\Commands\QueueCommands
+    tags:
+      - { name: drush.command }
+    arguments: ['@logger.factory', '@queue']

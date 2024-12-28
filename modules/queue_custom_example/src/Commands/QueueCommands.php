@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\queue_drush_example\Commands;
+namespace Drupal\queue_custom_example\Commands;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -46,15 +46,15 @@ class QueueCommands extends DrushCommands {
   /**
    * Populate a queue using a Drush command.
    *
-   * @command queue_drush_example:populate
+   * @command queue_custom_example:populate
    *
-   * @validate-module-enabled queue_drush_example
+   * @validate-module-enabled queue_custom_example
    *
-   * @usage queue_drush_example:populate
+   * @usage queue_custom_example:populate
    */
   public function populateQueue() {
     /** @var \Drupal\Core\Queue\QueueInterface $queue */
-    $queue = $this->queueFactory->get('queue_drush_example');
+    $queue = $this->queueFactory->get('queue_custom_example');
     for ($i = 0; $i < 100; $i++) {
       $item = new \stdClass();
       $item->id = $i;
@@ -66,21 +66,21 @@ class QueueCommands extends DrushCommands {
   /**
    * Report on the number of items in the queue using Drush.
    *
-   * @command queue_drush_example:report
+   * @command queue_custom_example:report
    *
-   * @validate-module-enabled queue_drush_example
+   * @validate-module-enabled queue_custom_example
    *
-   * @usage queue_drush_example:report
+   * @usage queue_custom_example:report
    */
   public function reportQueue() {
     /** @var \Drupal\Core\Queue\QueueInterface $queue */
-    $queue = $this->queueFactory->get('queue_drush_example');
+    $queue = $this->queueFactory->get('queue_custom_example');
 
     $args = [
       '@number' => $queue->numberOfItems(),
     ];
 
-    $this->logger()->notice($this->t("The queue_drush_example queue has @number items present.", $args));
+    $this->logger()->notice($this->t("The queue_custom_example queue has @number items present.", $args));
   }
 
 }

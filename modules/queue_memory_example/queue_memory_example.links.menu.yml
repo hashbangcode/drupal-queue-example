@@ -1,0 +1,6 @@
+queue_memory_example:
+  title: 'Queue Memory Example'
+  parent: drupal_queue_examples
+  description: 'An example of a memory queue.'
+  route_name: queue_memory_example
+  weight: 4

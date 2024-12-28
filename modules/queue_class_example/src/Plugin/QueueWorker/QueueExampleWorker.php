@@ -49,7 +49,7 @@ class QueueExampleWorker extends QueueWorkerBase implements ContainerFactoryPlug
       // then cron sees the item as having worked and so it is removed from the
       // queue. This means that if this method receives an object that isn't
       // a QueueDataInterface object then we simply log the error and return.
-      $this->logger->error($this->t('Unable to process queue item @id', ['@id' => $data->getId()]));
+      $this->logger->error($this->t('Unable to process queue item'));
       return;
     }
 
