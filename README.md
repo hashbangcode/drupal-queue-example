@@ -1,4 +1,4 @@
-# Drupal Queue Example
+# Drupal Queue Examples
 
 Examples of the Drupal Queue API in action.
 
