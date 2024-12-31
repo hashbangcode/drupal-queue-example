@@ -86,7 +86,7 @@ A couple of Drush commands exist in order to show the use of the queue settings
 when using custom queues. Set the following in your Drupal settings.php before
 trying to use these commands.
 
-```
+```php
 $settings['queue_service_queue_custom_example'] =
   'queue_custom_example.database';
 ```
