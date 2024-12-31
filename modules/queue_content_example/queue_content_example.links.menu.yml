@@ -1,0 +1,6 @@
+queue_content_example:
+  title: 'Queue Content Example'
+  parent: drupal_queue_examples
+  description: 'An example of processing content in a queue.'
+  route_name: queue_content_example
+  weight: 6

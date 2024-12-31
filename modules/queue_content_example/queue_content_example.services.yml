@@ -1,0 +1,4 @@
+services:
+  logger.channel.queue_content_example:
+    parent: logger.channel_base
+    arguments: ['queue_content_example']

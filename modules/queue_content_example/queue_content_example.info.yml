@@ -1,0 +1,7 @@
+name: 'Simple Content Example'
+type: module
+description: 'An example of creating some content using queue.'
+package: Queue
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal_queue_examples:drupal_queue_examples
