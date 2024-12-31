@@ -101,3 +101,12 @@ You can also populate the queue with data using the populate command.
 `drush queue_custom_example:populate`
 
 This queue cannot be processed via the cron command.
+
+## Queue Content Example
+
+An example of using a queue to generate 100 items of content on a site.
+
+Form path: `/drupal-queue-examples/queue-content-example`
+
+Note! This will create 100 content items of the type "Article" on the site. Do
+not use this form if you don't want your site populated with dummy content.

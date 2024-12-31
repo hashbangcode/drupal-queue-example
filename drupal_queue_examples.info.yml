@@ -1,5 +1,5 @@
 name: 'Drupal Queue Examples'
 type: module
 description: 'A set of example of the Drupal queue API in action.'
-package: Custom
+package: Queue
 core_version_requirement: ^10 || ^11

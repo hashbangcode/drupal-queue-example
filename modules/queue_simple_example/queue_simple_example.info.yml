@@ -1,7 +1,7 @@
 name: 'Simple Queue Example'
 type: module
 description: 'An example of a simple implementation of a queue.'
-package: Custom
+package: Queue
 core_version_requirement: ^10 || ^11
 dependencies:
   - drupal_queue_examples:drupal_queue_examples

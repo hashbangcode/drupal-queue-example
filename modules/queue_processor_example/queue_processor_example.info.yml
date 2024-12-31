@@ -1,7 +1,7 @@
 name: 'Queue Processor Example'
 type: module
 description: 'An example of a queue processor.'
-package: Custom
+package: Queue
 core_version_requirement: ^10 || ^11
 dependencies:
   - drupal_queue_examples:drupal_queue_examples
