@@ -21,7 +21,7 @@ class QueueForm extends FormBase {
   protected $queueFactory;
 
   /**
-   * The qieie process service.
+   * The queue process service.
    *
    * @var \Drupal\queue_custom_example\CustomQueueProcessorInterface
    */

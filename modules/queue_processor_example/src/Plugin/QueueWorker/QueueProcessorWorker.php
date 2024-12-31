@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Drupal\queue_processor_example\Plugin\QueueWorker;
 
+use Drupal\Core\Logger\LoggerChannelInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Queue\QueueWorkerBase;
 use Drupal\Core\StringTranslation\StringTranslationTrait;
@@ -34,8 +35,18 @@ class QueueProcessorWorker extends QueueWorkerBase implements ContainerFactoryPl
    */
   public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
     $instance = new self($configuration, $plugin_id, $plugin_definition);
-    $instance->logger = $container->get('logger.channel.queue_processor_example');
+    $instance->setLoggerService($container->get('logger.channel.queue_processor_example'));
     return $instance;
+  }
+
+  /**
+   * Set the logger service.
+   *
+   * @param \Drupal\Core\Logger\LoggerChannelInterface $logger
+   *   The logger service.
+   */
+  public function setLoggerService(LoggerChannelInterface $logger) {
+    $this->logger = $logger;
   }
 
   /**

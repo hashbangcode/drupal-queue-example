@@ -19,5 +19,5 @@ services:
         "@queue_custom_example.database",
         "@plugin.manager.queue_worker",
         "@datetime.time",
-        "@logger.channel.queue_processor_example",
+        "@logger.channel.queue_custom_example",
       ]
